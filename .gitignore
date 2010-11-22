@@ -2,7 +2,7 @@
 .buildpath
 .project
 compiled/*
-admin/compiled/*
-admin/temp/*
-admin/backups/*
+/admin/compiled/*
+/admin/temp/*
+/admin/backups/*
 
