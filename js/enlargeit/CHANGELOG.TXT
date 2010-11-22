@@ -1,0 +1,108 @@
+EnlargeIt! - http://enlargeit.timos-welt.de
+-------------------------------------------
+
+* v0.5 (beta)
+-------------
+First public release.
+
+* v0.6 (beta)
+-------------
+Improved compatibility with DIV- or TABLE-based site layouts.
+
+* v0.7 (beta)
+-------------
+Added drop shadow. 
+Packed version included to reduce file size.
+
+* v0.85
+-------
+Added picture title as caption.
+Better drag&drop support.
+Better JS performance.
+
+* v0.86
+-------
+Better drag&drop performance.
+Code optimizations - smaller, faster.
+Thumb borders won't disturb anymore.
+
+* v0.87
+-------
+Added fail-safe mode (fall-back).
+
+* v0.88
+-------
+Fixed a Konqueror bug.
+Added bump-glide mode.
+
+* v0.89
+-------
+Fixed: Clicking on thumb before page was loaded completely resultet in unwanted loading img.
+Fixed: Caption could stay visible when enlarging and shrinking within milliseconds.
+Fixed: When enlarging more than one pic at a time, one would look incorrect.
+Better drag & drop performance.
+Better looking caption.
+Code optimizations.
+
+* v0.90
+-------
+Fixed: Version 0.89 introduced a bug so EnlargeIt! wouldn't work anymore if another Javascript changed window.onload.
+Code optimizations: Packed version now is only 9 KByte again!
+Added lot of comments to enlargeit_source.js to help understanding it better.
+Added graphic files for button feature to come (buttons_act.gif, buttons_inact.gif).
+
+* v0.91
+-------
+!! UPGRADE NOTICE: Please replace 1pix.gif by 1pix.png when upgrading from v0.90 or earlier!  !!
+Fixed: Drop shadow wouldn't work correctly with Konqueror.
+Fixed: Konqueror had issues with enl_ani 1-3; now falling back to 0 for maximum compatibility.
+Corrected license issues, now LICENSE.TXT is included and comment in JS files is correct for GPL 3.0.
+
+* v0.92
+-------
+Fully compatible with ImageFlow 0.9 (http://imageflow.finnrudolph.de)
+Demo implementation: http://enlargeit.timos-welt.de/enl_iflow
+Download Demo: http://enlargeit.timos-welt.de/enl0902_iflow09.zip
+
+* v0.93
+-------
+!! UPGRADE NOTICE: Please replace 1pix.gif by 1pix.png when upgrading from v0.90 or earlier !!
+!! UPGRADE NOTICE: Please replace buttons_act.gif and -inact.gif with .png files when upgrading from v0.92 or earlier !!
+New Feature: Close button. When turned on, a click into the pic won't close it anymore, you have to use the button.
+New Feature: Darken screen when an image is enlarged. This way, only one pic at a time can be enlarged.
+New Feature: Center enlarged pics on screen.
+Fixed: Enlarged pics could be displayed out of the visible browser window under certain circumstances.
+
+* 
+
+* v0.94
+-------
+Fixed: IE6 in Quirksmode could display pics outside of visible browser window ('viewport')
+Fixed: When visitor scrolled down in browser, pics could be displayed too large
+
+
+
+* v0.95
+-------
+- re-design: title bar with buttons and pic title
+- removed pic caption feature (redundance with title bar)
+- rounded borders in Safari and all Mozilla devirates
+- AJAX capabilities
+- re-design: buttons now freely configurable
+- fixed: wrong picture position when thumb had set margin css attribute
+- fixed: large pictures with very small thumbnails could crash IE in bump glide mode
+- fixed: resizing browser window with enl_dark=1 did not always work correctly
+
+* v0.96
+-------
+- added next/previous button functionality and grouping of images by class
+- removed enl_brd option (now always on). If you want no border, set brd_size to 0
+
+* v1.00
+-------
+- new: drag&drop functionality can be turned on/off
+- new: preload of prev/next picture in grouped sets
+- new: two new animation types 'smooth glide' and 'exp glide'
+- new: additional darkening mode 2 stays dark while navigating
+- fixed: navigation buttons were visible even if there wasn't a next/previous pic
+- fixed: darkening wouldn't cover whole page in some cases

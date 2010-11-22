@@ -1,0 +1,531 @@
+@import"reset.css";
+
+
+/* Верхний фон */
+#wrap_top_bg {
+width:100%;
+background:url('../images/top_bg.jpg') repeat-x top;
+}
+
+/* Нижний фон */
+#wrap_bottom_bg {
+width:100%;
+background:url('../images/bottom_bg.jpg') repeat-x bottom;
+}
+
+/* Страница */
+#wrap {
+width:962px;
+margin:0 auto;
+}
+
+/* Все ссылки */
+a {color: #1884ff;}
+a:hover {text-decoration:none;}
+/* Ссылка черного цвета, а не по умолчанию */
+.black_link {color:#000;}
+
+h1 {
+font-size:24px;
+font-family:"Trebuchet MS";
+font-weight:normal;
+margin-bottom:10px;
+}
+h2 {
+font-size:18px;
+font-family:"Trebuchet MS";
+font-weight:normal;
+margin-bottom:10px;
+}
+p{
+font-size:12px;
+font-family:Tahoma;
+font-weight:normal;
+}
+
+.float_left {
+float:left;
+width:456px;
+}
+
+/* Шапка страницы */ 
+#header {
+width:962px;
+overflow:hidden;  
+height:170px;
+}
+
+/* Логотип */
+#logo {
+position:relative;
+left:10px;
+top:35px;
+width:240px;
+height:90px;
+display:block;
+float:left;
+width:260px;
+}
+.image {width:240px;height:90px;display: block;background: url('../images/logo.jpg') no-repeat;position:absolute;}
+.link {font-size:18px;color:#000;font-weight:bold;} /* Стиль надписи лого ( Simpla) при отключенных картинках */
+
+
+/* Основная часть заголовка */
+#header_menu {
+float:left;
+width:700px;
+font-size:12px;
+font-family:Arial;
+margin-top:20px;
+}
+
+/* Верхняя часть панель заголовка */
+#top_panel {
+width:700px;
+overflow:hidden;
+}
+
+/* Вход для пользователя */
+#top_panel_left {float:left;}
+
+/* Выбор валюты */
+#top_panel_right {float:right;}
+
+/* Ссылка с иконкой входа */
+#user_login_link {
+background:url('../images/login_micro.gif') no-repeat left center;
+padding:0 2px 0 16px;
+}
+#user_exit_link {
+background:url('../images/exit.gif') no-repeat right center;
+padding-right:26px;
+margin-left: 30px;
+}
+/* Верхнее меню */
+#top_header_menu {
+border:1px solid #c8c8c8;
+background:#fff;
+padding:14px 0 14px 0;
+margin-top:12px;
+text-align:center;
+}
+
+/* Ссылки в верхнем меню */
+#top_header_menu li {display:inline; padding:0 20px 0 20px;}
+#top_header_menu li a {color:#1e1e1e;}
+#top_header_menu li .on {color:#9e9e9e;}
+
+
+/* Корзина */
+#cart_info {
+background:url('../images/cart_micro.gif') no-repeat left center;
+padding-left:20px;
+margin-top:16px;
+}
+
+
+/* Основная часть страницы */
+#main_part {
+width:962px;
+overflow:hidden;
+}
+
+/* Левая часть страницы */
+#left_side {
+float:left;
+width:240px;
+}
+
+/* Меню каталога */
+#catalog_menu {
+border:1px solid #e3e3e3;
+padding:20px 30px 5px 30px;
+background:#fff;
+margin-bottom:14px;
+}
+
+/* Боковое меню */
+#side_menu {
+border:1px solid #e3e3e3;
+padding:20px 30px 5px 30px;
+background:#fff;
+margin-bottom:14px;
+}
+
+/* Бренды */
+#brands_menu {
+border:1px solid #e3e3e3;
+padding:10px 10px 10px 10px;
+background:#fff;
+margin-bottom:14px;
+text-align: center;
+}
+#brands_menu a
+{
+color:#ff7200; padding: 5px; 
+}
+
+/* Верхний уровень вложенности меню каталога */
+ul.catalog_menu {
+list-style:none;
+}
+ul.catalog_menu li{  /* Элемент списка */
+margin-bottom:10px;
+font-size:18px;
+font-family:"Trebuchet MS";
+color:#000;
+}
+ul.catalog_menu li a{ /* Ссылка */
+font-size:18px;
+font-family:"Trebuchet MS";
+}
+
+/* Внутренний уровень вложенности меню каталога */
+ul.catalog_menu ul {
+list-style:none;
+margin-left:20px;
+margin-bottom:10px;
+margin-top:10px;
+}
+ul.catalog_menu ul li{  /* Элемент списка */
+margin-bottom:10px;
+font-size:12px;
+font-family: Tahoma;
+color:#000;
+}
+ul.catalog_menu ul li a{  /* Ссылка */
+font-size:12px;
+font-family:Tahoma;
+}
+
+/* Поиск */
+#search {
+border:1px solid #e3e3e3;
+padding:5px;
+margin-bottom:18px;
+}
+#search form {
+background:#f4f4f4;
+padding:14px 0 14px 18px;
+}
+.search_input_text {
+width:132px;
+margin-right:6px;
+}
+.search_input_submit {
+width:54px;
+}
+
+/* Новости */
+#news {
+font-family:Arial;
+list-style:none;
+}
+#news li{
+margin:20px 0 0px 0;
+}
+
+.news_date {
+color:#848484;
+font-size:11px;
+}
+.news_annotation {
+margin:0px 0 6px 0;
+font-size:12px;
+}
+
+
+/* Правая часть страницы */
+#right_side {
+float:left;
+width:704px;
+margin-left:18px;
+}
+
+/* Блок с баннером */
+#catalog_image {
+background:#fff;
+margin-bottom:15px;
+}
+
+/* Картинка баннера */
+#catalog_image img {
+border:1px solid #e3e3e3;
+padding:5px;
+}
+
+/* Заголовок страницы */
+#page_title {
+font-family:Tahoma;  
+padding:0 0 10px 0;
+margin-bottom:16px;
+border-bottom:1px dotted #bfbfbf;
+overflow:hidden;
+clear:both;
+_height:1%;
+}
+
+
+/*********    Список товаров   *********/
+
+/* Блок товара */
+.product_block {
+float:left;
+width:352px;
+overflow:hidden;
+margin-bottom:16px;
+}
+
+/* Блок с картинкой товара */
+.product_block_img {
+float:left;
+}
+
+/* Картинка товара */
+.product_block_img img{
+border:1px solid #e3e3e3;
+padding:5px;
+}
+
+/* Описание товара */
+.product_block_annotation {
+float:left;
+margin-left:10px;
+width:160px;
+}
+
+/* Название товара */
+.product_name_link {
+display:block;
+}
+
+/* Название товара - хита */
+.product_name_link_hit {
+background:url('../images/medal.jpg') no-repeat left top;
+display:block;padding:0 0 14px 24px;margin-top:2px;
+}
+
+/* Цена товара */
+.price {
+color:#000;
+font-size:18px;
+font-family:Arial;
+margin-top:5px;
+}
+
+/* Старая цена товара */
+.old_price {
+color:#a5a5a5;
+font-size:18px;
+font-family:Arial;
+text-decoration:line-through;
+}
+
+/* В корзину */
+.link_to_cart {
+background: white url('../images/in_rec.jpg') no-repeat top;
+width:84px;
+height:21px;
+display:block;padding-top:1px;margin-top:4px;
+border:none;
+cursor: hand;
+}
+
+/* Аннотация */
+.product_annotation {
+font-size:12px;
+font-family:Tahoma;
+margin-top:4px;
+}
+
+/* Хлебные крошки */
+#path {
+float:right;color:#848484;
+text-align:right;
+font-size:11px;
+padding-top:6px;
+  width:220px;
+}
+
+#path a {
+color:#848484;
+font-size:11px;
+font-family:Tahoma;
+}
+
+/* Блок с описанием категории */
+#category_description {
+padding:15px;
+margin-bottom:26px;
+border:1px solid #e3e3e3;
+font-size:12px;
+font-family:Arial;
+}
+
+/* Постраничная навигация */
+#paging {
+clear:both;
+padding:12px 0 24px 0;
+font-family:Arial;
+}
+#paging a{
+color:#1884ff;
+font-size:12px;
+border:1px solid #e3e3e3;
+padding:6px 10px 6px 10px;
+display:block;
+float:left;
+margin:2px;
+}
+.all_pages {
+border:none !important;
+}
+.current_page {
+background:#f6f6f6;
+color:#000 !important;
+text-decoration:none;
+}
+
+/* Заголовок товара-хита */
+#hit_header {
+background:url('../images/medal.jpg') no-repeat left 3px;
+padding-left:24px;
+}
+
+/* Описание товара */
+#product_main {
+overflow:hidden;
+margin-bottom:28px;
+_height:1%;
+}
+
+/* Характеристики товара */
+#product_params {
+margin-bottom:28px;
+}
+#product_params table { 
+	border-spacing: 0px;
+	border-collapse: collapse;
+	background-color: #f5f5f5;
+}
+#product_params table tr td{
+	border: 1px solid #d0d0d0;
+	padding: 7px;
+}
+
+/* Характеристики товара */
+#filter_params {
+margin-bottom:28px;
+}
+#filter_params table { 
+	
+	border-spacing: 0px;
+	border-collapse: collapse;
+	background-color: #ffffff;
+}
+#filter_params table tr td{
+	border: 1px solid #e0e0e0;
+	padding: 5px;
+}
+#filter_params span{
+	padding-left: 5px;
+}
+
+
+/* Картинки товара */
+#product_main_img {
+float:left;
+width:330px;
+}
+
+/* Список дополнительных картинок */
+#product_main_img ul {
+margin-top:4px;
+}
+#product_main_img ul li{
+display:inline;
+padding-right:8px;
+}
+#product_main_img ul li img{
+margin-bottom:8px;
+}
+#product_main_img img{
+border:1px solid #e3e3e3;
+padding:5px;
+}
+
+/* Текст описания товара */
+#product_main_description {
+float:left;
+width:370px;
+font-size:12px;
+font-family:Arial;
+}
+#product_main_description p {
+padding-bottom:12px;
+}
+#product_main_description ul {
+list-style:none;
+}
+
+
+/* Блок статей */
+#articles {
+background:url('../images/gray_bgd.jpg');
+width:670px;
+padding:22px 30px 22px 30px;
+_padding:22px 0 22px 30px;
+overflow:hidden;
+clear:both;
+margin-bottom: 30px;
+}
+
+/* Левая колонка статей */
+#articles_left {
+float:left;
+width:300px;
+}
+
+/* Правая колонка статей */
+#articles_right {
+float:left;
+width:310px;
+margin-left:35px;
+}
+
+/* Блок статьи */
+.article {
+margin-bottom:24px;
+}
+
+/* Аннотация статьи */
+.article_annotation {
+font-size:12px;
+font-family:tahoma;
+color:#000;
+}
+
+
+
+/*********    Подвал   *********/
+#footer {
+height:74px;
+padding-top:30px;
+margin-top: 30px;
+}
+#syst {
+float:left;
+}
+#syst li{
+display:inline;
+padding-right:2px;
+}
+#copyright {
+float:right;
+color:#969696;
+font-family:Tahoma;
+font-size:12px;
+margin-top:12px;
+}
+
+

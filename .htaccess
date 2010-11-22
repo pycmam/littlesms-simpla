@@ -1,0 +1,68 @@
+AddDefaultCharset UTF-8
+ErrorDocument 404 /sections/404
+RewriteEngine on
+
+RewriteCond ${REQUEST_FILENAME} !-d
+RewriteCond ${REQUEST_FILENAME} !-f
+
+# Каталог товаров
+#RewriteRule ^catalog/([^#]+)$	index.php?module=Storefront&category=$1&filter=$2 [L,QSA]
+RewriteRule ^catalog/([^/]+)/([^/]+)/page_([^/]+)/?$	index.php?module=Storefront&category=$1&brand=$2&page=$3 [L,QSA]
+RewriteRule ^catalog/([^/]+)/page_([^/]+)/?$	index.php?module=Storefront&category=$1&page=$2 [L,QSA]
+RewriteRule ^catalog/([^/]+)/([^/]+)/?$	index.php?module=Storefront&category=$1&brand=$2 [L,QSA]
+RewriteRule ^catalog/([^/]+)/?$	index.php?module=Storefront&category=$1 [L,QSA]
+RewriteRule ^catalog/?$	index.php?module=Storefront [L,QSA]
+
+RewriteRule ^products/([^/]+)/?$	index.php?module=Storefront&product=$1 [L]
+RewriteRule ^products/?$	index.php?module=Storefront [L]
+
+#Сравнение товаров
+RewriteRule ^compare/?$	index.php?module=Compare [L]
+RewriteRule ^compare/([^/]+)/?$	index.php?module=Compare&product_url=$1 [L]
+RewriteRule ^compare/remove/([^/]+)/?$	index.php?module=Compare&remove_product_url=$1 [L]
+
+RewriteRule ^brands/?$	index.php?module=Storefront [L]
+RewriteRule ^brands/([^/]+)/?$	index.php?module=Storefront&brand=$1 [L]
+RewriteRule ^brands/([^/]+)/page_([^/]+)/?$	index.php?module=Storefront&brand=$1&page=$2 [L]
+
+# Поиск товаров
+RewriteRule ^search/([^/]+)/?$	index.php?module=Search&keyword=$1 [L]
+RewriteRule ^search/?$	index.php?module=Search [L]
+
+# Страницы
+RewriteRule ^sections/([^/]+)/?$	index.php?section=$1 [L]
+
+# Статьи
+RewriteRule ^articles/([^/]+)/?$	index.php?module=Articles&article_url=$1 [L]
+RewriteRule ^articles/?$	index.php?module=Articles [L]
+
+# Новости
+RewriteRule ^news/([^/]+)/?$	index.php?module=NewsLine&news_url=$1 [L]
+RewriteRule ^news/?$	index.php?module=NewsLine [L]
+
+# Корзина и заказы
+RewriteRule ^cart/?$	index.php?module=Cart   [L,QSA]
+RewriteRule ^cart/add/([^/]+)/?$	index.php?module=Cart&product_id=$1  [L]
+RewriteRule ^cart/delete/([^/]+)/?$	index.php?module=Cart&delete_product_id=$1  [L]
+RewriteRule ^order/([^/]+)/?$	index.php?module=Order&order_code=$1  [L]
+RewriteRule ^order/?$	index.php?module=Order  [L]
+
+# Для пользователей
+RewriteRule ^logout/?$	index.php?module=Login&action=logout  [L]
+RewriteRule ^login/remind/?$	index.php?module=Login&remind=1  [L]
+RewriteRule ^login/?$	index.php?module=Login  [L]
+RewriteRule ^account/?$	index.php?module=Account  [L]
+RewriteRule ^registration/?$	index.php?module=Registration  [L]
+
+# google sitemap
+RewriteRule ^sitemap.xml?$	index.php?module=Sitemap&format=google  [L]
+
+# pricelists
+RewriteRule ^pricelist.xls?$	index.php?module=Pricelist  [L]
+RewriteRule ^yandex.xml?$	index.php?module=Pricelist&format=yandex  [L]
+
+# feedback
+RewriteRule ^feedback/?$	index.php?module=Feedback  [L]
+
+#downloads
+RewriteRule ^order/([^/]+)/([^/]+)/?$	download.php?order_code=$1&file=$2  [L]

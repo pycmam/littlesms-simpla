@@ -1,0 +1,45 @@
+/* ----------------------------------------------------------
+
+author:    Boris Perepelitsa
+email:     borisss777@gmail.com
+icq:       411-243-945
+profail:   www.free-lance.ru/users/Boriss
+---------------------------------------------------------- */
+
+
+/* DEFAULT */
+* {
+margin: 0;
+padding: 0;
+}
+img, fieldset {
+border:0;
+}
+html { 
+font-size: 100.01%;
+height:100%;
+}
+body {
+width: 100%;
+color: #000;
+text-align: left;
+font-size:62.5%;
+font-size:12px;
+font-family:Tahoma;
+background:#fff url('../images/bg.gif');
+padding-top:30px;
+}
+ul {
+list-style:none;
+}
+td {vertical-align:top;}
+*:focus {outline: none}
+.clear {
+clear:both;
+}
+a:hover {
+text-decoration:none;
+}
+a {
+color:#000;
+}

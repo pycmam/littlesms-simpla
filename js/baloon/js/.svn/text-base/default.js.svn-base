@@ -1,0 +1,7 @@
+// (C) Netlogic, 2003
+
+window.onload = function() {
+	ValidateForms();
+	CreateBaloon();
+	//другие функции привязываемые к onload
+}

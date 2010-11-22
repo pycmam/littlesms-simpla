@@ -1,0 +1,18 @@
+User-agent: *
+
+Disallow: /sections/404
+
+Disallow: /admin/
+Disallow: /orders/
+Disallow: /account/
+Disallow: /js/
+Disallow: /captcha/
+Disallow: /Smarty/
+Disallow: /design/
+Disallow: /templates_c/
+Disallow: /connectors/
+Disallow: /cart/
+
+
+
+

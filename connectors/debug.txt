@@ -1,0 +1,223 @@
+qwearray (
+)
+
+
+array (
+  'out_summ' => '0.010000',
+  'inv_id' => '22',
+  'crc' => '24D9FBD4F1F4830350D9C1622F7B9C40',
+  'OutSum' => '0.010000',
+  'InvId' => '22',
+  'SignatureValue' => '24D9FBD4F1F4830350D9C1622F7B9C40',
+  'Shp_item' => '2',
+)
+
+
+array (
+  'out_summ' => '0.010000',
+  'inv_id' => '22',
+  'crc' => '24D9FBD4F1F4830350D9C1622F7B9C40',
+  'OutSum' => '0.010000',
+  'InvId' => '22',
+  'SignatureValue' => '24D9FBD4F1F4830350D9C1622F7B9C40',
+  'Shp_item' => '2',
+)
+
+
+array (
+  'out_summ' => '0.010000',
+  'inv_id' => '24',
+  'crc' => '71F5F7D4F1E455E42D9061A2EE8D9CC1',
+  'OutSum' => '0.010000',
+  'InvId' => '24',
+  'SignatureValue' => '71F5F7D4F1E455E42D9061A2EE8D9CC1',
+  'Shp_item' => '10',
+)
+
+
+array (
+  'out_summ' => '0.010000',
+  'inv_id' => '24',
+  'crc' => '71F5F7D4F1E455E42D9061A2EE8D9CC1',
+  'OutSum' => '0.010000',
+  'InvId' => '24',
+  'SignatureValue' => '71F5F7D4F1E455E42D9061A2EE8D9CC1',
+  'Shp_item' => '10',
+)
+
+
+array (
+  'out_summ' => '0.010000',
+  'inv_id' => '26',
+  'crc' => '782106C07A837C3EB564AAFB68A2F836',
+  'OutSum' => '0.010000',
+  'InvId' => '26',
+  'SignatureValue' => '782106C07A837C3EB564AAFB68A2F836',
+  'Shp_item' => '10',
+)
+
+
+array (
+)
+
+
+array (
+  'out_summ' => '0.010000',
+  'inv_id' => '26',
+  'crc' => '782106C07A837C3EB564AAFB68A2F836',
+  'OutSum' => '0.010000',
+  'InvId' => '26',
+  'SignatureValue' => '782106C07A837C3EB564AAFB68A2F836',
+  'Shp_item' => '10',
+)
+
+
+array (
+  'out_summ' => '0.010000',
+  'inv_id' => '28',
+  'crc' => 'FBDE7B1E5F1CFFC893D542B0FF133E04',
+  'OutSum' => '0.010000',
+  'InvId' => '28',
+  'SignatureValue' => 'FBDE7B1E5F1CFFC893D542B0FF133E04',
+  'Shp_item' => '10',
+)
+
+
+array (
+  'out_summ' => '0.010000',
+  'inv_id' => '28',
+  'crc' => 'FBDE7B1E5F1CFFC893D542B0FF133E04',
+  'OutSum' => '0.010000',
+  'InvId' => '28',
+  'SignatureValue' => 'FBDE7B1E5F1CFFC893D542B0FF133E04',
+  'Shp_item' => '10',
+)
+
+
+array (
+  'out_summ' => '0.010000',
+  'inv_id' => '30',
+  'crc' => '58315471593A6AA1B12AAB1A52F2A424',
+  'OutSum' => '0.010000',
+  'InvId' => '30',
+  'SignatureValue' => '58315471593A6AA1B12AAB1A52F2A424',
+  'Shp_item' => '10',
+)
+
+
+array (
+)
+
+
+array (
+)
+
+
+array (
+)
+
+
+array (
+)
+
+
+array (
+)
+
+
+array (
+)
+
+
+array (
+)
+
+
+array (
+)
+
+
+array (
+)
+
+
+array (
+)
+
+
+array (
+)
+
+
+array (
+)
+
+
+array (
+)
+
+
+array (
+)
+
+
+array (
+)
+
+
+array (
+)
+
+
+array (
+)
+
+
+array (
+)
+
+
+array (
+)
+
+
+array (
+)
+
+
+array (
+)
+
+
+array (
+)
+
+
+array (
+)
+
+
+array (
+)
+
+
+array (
+)
+
+
+array (
+)
+
+
+array (
+)
+
+
+array (
+)
+
+
+array (
+)
+
+

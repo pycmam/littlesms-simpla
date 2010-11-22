@@ -1,0 +1,118 @@
+a.admin_tooltip_edit {
+background:url('../i/edit.png') no-repeat left center;
+padding:5px 2px 8px 20px;
+line-height:23px;
+color:#000;
+font-size:12px;
+font-family:tahoma;
+}
+
+a.admin_tooltip_delete {
+background:url('../i/invisible.png') no-repeat left center;
+padding:5px 2px 8px 20px;
+line-height:23px;
+color:#000;
+font-size:12px;
+font-family:tahoma; 
+}
+
+a.admin_tooltip_hit {
+background:url('../i/hit.png') no-repeat left center;
+padding:5px 2px 8px 20px;
+line-height:23px;
+color:#000;
+font-size:12px;
+font-family:tahoma; 
+}
+
+a.admin_tooltip_up {
+background:url('../i/up.png') no-repeat left center;
+padding:5px 2px 8px 20px;
+line-height:23px;
+color:#000;
+font-size:12px;
+font-family:tahoma; 
+}
+
+a.admin_tooltip_down {
+background:url('../i/down.png') no-repeat left center;
+padding:5px 2px 8px 20px;
+line-height:23px;
+color:#000;
+font-size:12px;
+font-family:tahoma; 
+}
+
+a.admin_tooltip_add {
+background:url('../i/add.png') no-repeat left center;
+padding:5px 2px 8px 20px;
+line-height:23px;
+color:#000;
+font-size:12px;
+font-family:tahoma; 
+}
+
+#tooltip {
+	width: 187px;
+	top: 0px;
+	left: 0px;
+	padding: 0;
+	margin: 0;
+
+	display: none;
+	position: absolute;
+        z-index: 64999;
+
+        filter: Alpha(Opacity='85');
+	-moz-opacity: 0.85;
+	opacity: 0.85;
+}
+
+#tooltipHeader {
+	width: 187px;
+	height: 19px;
+	padding: 0;
+	margin: 0;
+	font-size: 0;
+	line-height: 0;
+	background-repeat: no-repeat;
+
+	display: block;
+}
+
+.tooltipHeaderDirect {
+	background-image: url(../i/tooltip-header.gif);
+}
+
+.tooltipHeaderFlip {
+	background-image: url(../i/tooltip-header-flip.gif);
+}
+
+#tooltipFooter {
+	width: 187px;
+	height: 3px;
+	padding: 0;
+	margin: 0;
+	font-size: 0;
+	line-height: 0;
+	background-image: url(../i/tooltip-footer.gif);
+	background-repeat: no-repeat;
+
+	display: block;
+}
+
+#tooltipBody {
+	padding: 10px;
+
+	background-color: #D0D0D0;
+
+	width: 167px;
+	width: expression('167px');
+	margin: 0;
+	font: normal normal 10px/14px Verdana, Arial, serif;
+	line-height: 140%;
+	background-image: url(../i/tooltip-body.gif);
+	background-repeat: repeat-y;
+
+	display: block;
+}

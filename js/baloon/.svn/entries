@@ -1,0 +1,49 @@
+8
+
+dir
+20
+file://localhost/Users/denispikusov/svn/webox/baloon
+file://localhost/Users/denispikusov/svn
+
+
+
+2008-12-02T19:49:08.407755Z
+2
+denispikusov
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+206d08b6-c0aa-11dd-af21-9b5d0461ed44
+
+css
+dir
+
+i
+dir
+
+index.html
+file
+
+
+
+
+2008-12-02T19:49:47.000000Z
+a73a08bad198b3e4f68a2f4d482ea5c6
+2008-12-02T19:49:08.407755Z
+2
+denispikusov
+
+js
+dir
+

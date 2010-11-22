@@ -1,0 +1,9 @@
+ .big {
+  border: none;
+  font-family: Garamond, TimesNewRoman, Times, serif;
+  font-weight: bold;
+  font-size: 20pt;
+  font-variant: small-caps;
+  letter-spacing: 1pt;
+  color: #660000;
+  }
