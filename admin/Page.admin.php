@@ -15,26 +15,26 @@ class Page extends Widget
                                  "Import", "Export",
                                  "Themes", "Templates", "Styles", "Images",
                                  "Backup", "Setup", "Currency", "DeliveryMethods", "DeliveryMethod", "PaymentMethods", "PaymentMethod",
-                                 "Properties", "Property" );
-	
+                                 "Properties", "Property", "SmsNotify" );
+
 	// Конструктор
 	function Page(&$parent)
 	{
 	    // Вызываем конструктор базового класса
 		parent::Widget($parent);
-		
+
 		$this->add_param('section');
-		
+
 		// Берем название модуля из get-запроса
 		$section = $this->param('section');
-		
+
 		// Если запросили недопустимый модуль - используем модуль MainPage
 		if(empty($section) || !in_array($section, $this->allowed_modules))
 		  $section = 'MainPage';
-		  
+
 		// Подключаем файл с необходимым модулем
-		require_once($section.'.admin.php');  
-		
+		require_once($section.'.admin.php');
+
 		// Создаем соответствующий модуль
 		if(class_exists($section))
 			$this->module = new $section($this);

@@ -11,7 +11,7 @@
  * Этот класс использует шаблон cart.tpl
  *
  */
- 
+
 require_once('Widget.class.php');
 require_once('Order.class.php');
 
@@ -19,7 +19,7 @@ class Cart extends Widget
 {
   var $single = false;
   var $title = 'Корзина';
-    
+
   //////////////////////////////////////////
   // Конструктор
   //////////////////////////////////////////
@@ -30,8 +30,8 @@ class Cart extends Widget
     // Вызовем фунцию, обрататывающую действия с товарами в корзине
     $this->prepare();
   }
-  
-  
+
+
   //////////////////////////////////////////
   // Изменения товаров в корзине
   //////////////////////////////////////////
@@ -52,9 +52,9 @@ class Cart extends Widget
       {
     	 // Не дадим больше чем на складе
 	     $amount = min($amount, $variant->stock);
-        
+
          $this->update($variant_id, $amount, true);
-         
+
          if(!isset($_POST['submit_order']) || $_POST['submit_order']!=1)
            header("Location: http://$this->root_url/cart/");
       }
@@ -76,14 +76,14 @@ class Cart extends Widget
         // мало ли что могли запостить
         $amount = intval($amount);
         $variant_id = intval($variant_id);
-        
+
         // Выберем товар из базы, заодно убедившись в его существовании
         $query = sql_placeholder('SELECT * FROM products_variants WHERE variant_id=? LIMIT 1', $variant_id);
         $this->db->query($query);
         $variant = $this->db->result();
 
         if($amount > 0 && !empty($variant))
-        {  
+        {
           // Не дадим больше чем на складе
           $amount = min($amount, $variant->stock);
 
@@ -92,20 +92,20 @@ class Cart extends Widget
         }
         // Если товара больше нет на складе - уберем из корзины
         if($variant->stock <= 0)
-           $this->update($variant_id, 0);         
+           $this->update($variant_id, 0);
       }
       if(!isset($_POST['submit_order']) || $_POST['submit_order']!=1)
         header("Location: http://$this->root_url/cart/");
-      
-    }       
+
+    }
   }
 
   //////////////////////////////////////////
   // Основная функция
   //////////////////////////////////////////
   function fetch()
-  {  
-    // Если запрос на поздравление с успешным заказом  
+  {
+    // Если запрос на поздравление с успешным заказом
     if(isset($_GET['finish']))
     {
       return $this->show_finish();
@@ -121,7 +121,7 @@ class Cart extends Widget
       return $this->show_cart();
     }
   }
-  
+
 
   //////////////////////////////////////////
   // Функция отображения корзины
@@ -130,12 +130,12 @@ class Cart extends Widget
   {
     $total_price = 0;
     $products = array();
-    
+
     // Сформируем массив товаров в корзине
     if(is_array($_SESSION['shopping_cart']))
     {
         $variants_ids = array_keys($_SESSION['shopping_cart']);
-          
+
 		$discount=isset($this->user->discount)?$this->user->discount:0;
 		$query = sql_placeholder("SELECT products_variants.*, products.model as model, products.url as url, brands.name as brand, categories.single_name as category,
                 products_variants.price*(100-$discount)/100 as discount_price
@@ -150,18 +150,18 @@ class Cart extends Widget
         {
           // А количество товара - не должно превысить количество на складе
           // (мало ли, может пока юзер играется с корзиной, кто-то купил уже эти товары)
-          $variants[$k]->amount = $_SESSION['shopping_cart'][$variant->variant_id] = min($_SESSION['shopping_cart'][$variant->variant_id], $variant->stock);        
+          $variants[$k]->amount = $_SESSION['shopping_cart'][$variant->variant_id] = min($_SESSION['shopping_cart'][$variant->variant_id], $variant->stock);
           // Добавим стоимость к общей сумме
-          $total_price += $variant->discount_price*$variants[$k]->amount;   
+          $total_price += $variant->discount_price*$variants[$k]->amount;
         }
       }
   	}
     // Передаем товары в шаблон
     $this->smarty->assign('variants', $variants);
-    
+
     // Передаем общую стоимость в шаблон
     $this->smarty->assign('total_price', $total_price);
-  	
+
     // Сформируем массив способов доставки и тоже в шаблон
   	$query = "SELECT * FROM delivery_methods WHERE enabled ORDER BY delivery_method_id";
   	$this->db->query($query);
@@ -173,7 +173,7 @@ class Cart extends Widget
   	    $delivery_methods[$k]->final_price = 0;
   	}
     $this->smarty->assign('delivery_methods', $delivery_methods);
-      
+
     // Передаем параметры заказа по умолчанию.
     // Если постили форму, передаем то что запостили,
     if(isset($_POST['submit_order']) && $_POST['submit_order']==1)
@@ -181,13 +181,13 @@ class Cart extends Widget
       $this->smarty->assign('name', $_POST['name']);
       $this->smarty->assign('email', $_POST['email']);
       $this->smarty->assign('phone', $_POST['phone']);
-      $this->smarty->assign('address', $_POST['address']); 
-      $this->smarty->assign('comment', $_POST['comment']); 
-      $this->smarty->assign('delivery_method_id', $_POST['delivery_method_id']); 
+      $this->smarty->assign('address', $_POST['address']);
+      $this->smarty->assign('comment', $_POST['comment']);
+      $this->smarty->assign('delivery_method_id', $_POST['delivery_method_id']);
     }
     // Иначе берем из профиля пользователя
     else
-    { 
+    {
       if(isset($this->user))
       {
         $this->smarty->assign('name', isset($this->user->name)?$this->user->name:'');
@@ -196,15 +196,15 @@ class Cart extends Widget
   		$query = sql_placeholder("SELECT * FROM orders WHERE user_id=? ORDER BY order_id DESC LIMIT 1", $this->user->user_id);
   		$this->db->query($query);
   		$last_order = $this->db->result();
-        
+
         $this->smarty->assign('phone', isset($last_order->phone)?$last_order->phone:'');
-        $this->smarty->assign('address', isset($last_order->address)?$last_order->address:''); 
+        $this->smarty->assign('address', isset($last_order->address)?$last_order->address:'');
       }
       // Способ доставки установим по умолчанию первым элементом массива
       if(is_array($delivery_methods))
-        $this->smarty->assign('delivery_method_id', $delivery_methods[0]->delivery_method_id);       
+        $this->smarty->assign('delivery_method_id', $delivery_methods[0]->delivery_method_id);
     }
-        
+
     // Выводим корзину
     return $this->body = $this->smarty->fetch('cart.tpl');
   }
@@ -223,11 +223,11 @@ class Cart extends Widget
     {
       $this->smarty->assign('error', "Введите число с картинки");
       return $this->show_cart();
-    } 
-     
+    }
+
     // Приберем сохраненную капчу, иначе можно отключить загрузку рисунков и постить старую
-    unset($_SESSION["captcha_code"]);      
-    
+    unset($_SESSION["captcha_code"]);
+
     // Параметры заказа
     if(isset($_POST['name']))
       $name = $_POST['name'];
@@ -248,27 +248,27 @@ class Cart extends Widget
     if(isset($_POST['comment']))
       $comment = $_POST['comment'];
     else
-      $comment = '';       
-    // Если залогинены, добавим пользователя в заказ  
+      $comment = '';
+    // Если залогинены, добавим пользователя в заказ
     if($this->user)
       $user_id = $this->user->user_id;
     else
       $user_id = 0;
-       
+
     // Генерируем уникальный код заказа
     // по которому пользователь сможет посмотреть заказ
-    $code = md5(uniqid('', true)); 
-    
+    $code = md5(uniqid('', true));
+
     $ip = $_SERVER['REMOTE_ADDR'];
-       
+
     // Формируем запрос на добавление заказа
     $query = sql_placeholder("INSERT INTO orders(order_id, delivery_method_id, date, user_id, name, email, address, phone, comment, status, code, ip)
                               VALUES(NULL, NULL, NOW(), ?, ?, ?, ?, ?, ?, 0, ?, ?)",
                               $user_id, $name, $email, $address, $phone, $comment, $code, $ip);
-  	                            
+
     $this->db->query($query);
     $order_id = $this->db->insert_id();
-   
+
     // Если заказ не добавился в базу
     if(!$order_id)
     {
@@ -285,9 +285,9 @@ class Cart extends Widget
       $this->smarty->assign('error', "Пустой заказ");
       return $this->show_cart();
     }
-     
+
 	$variants_ids = array_keys($_SESSION['shopping_cart']);
-	  
+
 	$discount=isset($this->user->discount)?$this->user->discount:0;
 	$query = sql_placeholder("SELECT products_variants.*, products.model as model, products.url as url, products.product_id as product_id,
 			products_variants.price*(100-$discount)/100 as discount_price
@@ -299,7 +299,7 @@ class Cart extends Widget
       $this->smarty->assign('error', "Товары отсутствуют на складе");
       return $this->show_cart();
     }
-  	
+
   	foreach($variants as $k=>$variant)
     {
            // А количество товара - не должно превысить количество на складе
@@ -307,40 +307,40 @@ class Cart extends Widget
           if($_SESSION['shopping_cart'][$variant->variant_id] > $variant->stock)
           {
             $this->smarty->assign('error', "Нехватает товаров на складе");
-            return $this->show_cart();          
+            return $this->show_cart();
           }
-          $amount = $_SESSION['shopping_cart'][$variant->variant_id];     
+          $amount = $_SESSION['shopping_cart'][$variant->variant_id];
           // Добавим стоимость к общей сумме
-          $total_price += $variant->discount_price*$amount;   
-  	    
+          $total_price += $variant->discount_price*$amount;
+
   	      $query = sql_placeholder('INSERT INTO orders_products(order_id, product_id, variant_id, product_name, variant_name, price, quantity) VALUES(?, ?, ?, ?, ?, ?, ?)',
                          	      $order_id, $variant->product_id, $variant->variant_id,  $variant->model,  $variant->name, $variant->discount_price, $amount);
           $this->db->query($query);
     }
 
-    // Если указан способ доставки, добавим в заказ это 
+    // Если указан способ доставки, добавим в заказ это
     if(isset($_POST['delivery_method_id']))
     {
       $delivery_method_id = intval($_POST['delivery_method_id']);
   	  $query = sql_placeholder("SELECT * FROM delivery_methods WHERE enabled AND delivery_method_id=? LIMIT 1", $delivery_method_id);
   	  $this->db->query($query);
   	  $delivery_method = $this->db->result();
-      $this->smarty->assign('delivery_method', $delivery_method); 
+      $this->smarty->assign('delivery_method', $delivery_method);
 
       // Вычислим стоимость доставки
       $delivery_price = 0;
       if($delivery_method->free_from > $total_price)
       {
-        $delivery_price = $delivery_method->price; 
-      }  	
+        $delivery_price = $delivery_method->price;
+      }
 
       $query = sql_placeholder("UPDATE orders SET delivery_method_id=?, delivery_price=? WHERE order_id=?",
-  	                            $delivery_method_id, $delivery_price, $order_id); 
-  	  $this->db->query($query);   
+  	                            $delivery_method_id, $delivery_price, $order_id);
+  	  $this->db->query($query);
     }
 
-    // Теперь нам нужно всех поздравить с заказом 
-        
+    // Теперь нам нужно всех поздравить с заказом
+
     // Получаем наш заказ из базы
     // (он у нас и так есть, но для надежности берем из базы)
     $order = Order::get_order_by_code($code);
@@ -351,17 +351,33 @@ class Cart extends Widget
     }
 
     $this->smarty->assign('order', $order);
- 
+
     // Сформируем массив способов оплаты
   	$query = "SELECT * FROM payment_methods ORDER BY payment_method_id";
   	$this->db->query($query);
   	$payment_methods = $this->db->results();
     $this->smarty->assign('payment_methods', $payment_methods);
-       
+
     // Письмо администратору
     $message = $this->smarty->fetch('../../../admin/templates/email_order_admin.tpl');
     $this->email($this->settings->admin_email, 'Заказ №'.$order->order_id, $message);
-    
+
+    // СМС администратору
+    if ($this->settings->sms_enabled) {
+        require_once (dirname(__FILE__) . '/LittleSMS.class.php');
+        $sms = new LittleSMS($this->settings->sms_username, $this->settings->sms_apikey, false);
+
+        // Посчитать полную стоимость заказа
+        $order_total = 0;
+        foreach ($order->products as $product) {
+            $order_total += $product->price * $this->currency->rate_from / $this->currency->rate_to;
+        }
+        $this->smarty->assign('order_total', $order_total);
+
+        $sms_message = $this->smarty->fetch('../../../admin/templates/sms_order_admin.tpl');
+        $sms->sendSMS($this->settings->sms_phones, $sms_message, $this->settings->sms_sender);
+    }
+
     // Письмо пользователю
     if(!empty($order->email))
     {
@@ -374,7 +390,7 @@ class Cart extends Widget
 
     header("Location: http://$this->root_url/order/$code");
     exit();
-  } 
+  }
 
 
   //////////////////////////////////////////
@@ -401,10 +417,10 @@ class Cart extends Widget
        else
        {
          $_SESSION['shopping_cart'][$variant_id] = intval($amount);
-       }    
+       }
      }
   }
-  
-  
+
+
 
 }

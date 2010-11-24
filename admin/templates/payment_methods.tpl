@@ -5,9 +5,10 @@
       <li><a href="index.php?section=Currency" class="off">валюты</a></li>
       <li><a href="index.php?section=DeliveryMethods" class="off">доставка</a></li>
       <li><a href="index.php?section=PaymentMethods" class="on">оплата</a></li>
+      <li><a href="index.php?section=SmsNotify" class="off">SMS уведомления</a></li>
   </ul>
   <!-- /Вкладки /-->
-   
+
   <!-- Путь /-->
   <table id="in_right">
     <tr>
@@ -20,22 +21,22 @@
     </tr>
   </table>
   <!-- /Путь /-->
-</div>	
- 
+</div>
+
 <!-- Content #Begin /-->
 <div id="content">
   <div id="cont_border">
     <div id="cont">
-     
+
       <div id="cont_top">
-        <!-- Иконка раздела /--> 
+        <!-- Иконка раздела /-->
 	    <img src="./images/icon_card.jpg" alt="" class="line"/>
 	    <!-- /Иконка раздела /-->
-	    
+
 	    <!-- Заголовок раздела /-->
         <h1 id="headline">Формы оплаты</h1>
         <!-- /Заголовок раздела /-->
-        
+
         <!-- Помощь /-->
         <div id="help">
           <a href="usermanual.html?height=450&width=700&scrollto=payment" title="Помощь" class="thickbox">Помощь</a>
@@ -43,33 +44,33 @@
         <!-- /Помощь /-->
 		 <!-- Помощь2 /-->
         <div class="help2">
-              <a href="index.php?section=PaymentMethod&token={$Token}" class="fl"><img src="./images/add.jpg" alt="" class="fl"/>Добавить форму</a>              
+              <a href="index.php?section=PaymentMethod&token={$Token}" class="fl"><img src="./images/add.jpg" alt="" class="fl"/>Добавить форму</a>
         </div>
         <!-- /Помощь2 /-->
       </div>
 
       <div id="cont_center">
-        
+
           {if $Error}
           <!-- Error #Begin /-->
           <div id="error_minh">
             <div id="error">
-              <img src="./images/error.jpg" alt=""/><p>{$Error}</p>					
+              <img src="./images/error.jpg" alt=""/><p>{$Error}</p>
             </div>
           </div>
           <!-- Error #End /-->
           {/if}
-          
-          <div class="clear">&nbsp;</div>	
-          
+
+          <div class="clear">&nbsp;</div>
+
           {$PagesNavigation}
-  
+
           {if $Items}
 
           <!-- Форма товаров #Begin /-->
           <form name='products' method="post">
             <table id="list2">
-            
+
               {* Список разделов *}
               {foreach item=item from=$Items}
               <tr>
@@ -101,8 +102,8 @@
 
         </div>
 	    <!-- Right side #End/-->
- 
+
     </div>
-  </div>	    
+  </div>
 </div>
-<!-- Content #End /--> 
+<!-- Content #End /-->

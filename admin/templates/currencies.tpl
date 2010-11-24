@@ -7,9 +7,10 @@
       <li><a href="index.php?section=Currency" class="on">валюты</a></li>
       <li><a href="index.php?section=DeliveryMethods" class="off">доставка</a></li>
       <li><a href="index.php?section=PaymentMethods" class="off">оплата</a></li>
+      <li><a href="index.php?section=SmsNotify" class="off">SMS уведомления</a></li>
   </ul>
   <!-- /Вкладки /-->
-   
+
   <!-- Путь /-->
   <table id="in_right">
     <tr>
@@ -22,22 +23,22 @@
     </tr>
   </table>
   <!-- /Путь /-->
-</div>	
- 
+</div>
+
 <!-- Content #Begin /-->
 <div id="content">
   <div id="cont_border">
     <div id="cont">
-     
+
       <div id="cont_top">
-        <!-- Иконка раздела /--> 
+        <!-- Иконка раздела /-->
 	    <img src="./images/icon_currencies.jpg" alt="" class="line"/>
 	    <!-- /Иконка раздела /-->
-	    
+
 	    <!-- Заголовок раздела /-->
         <h1 id="headline">Валюты</h1>
         <!-- /Заголовок раздела /-->
-        
+
         <!-- Помощь /-->
         <div id="help">
           <a href="usermanual.html?height=450&width=700&scrollto=currencies" title="Помощь" class="thickbox">Помощь</a>
@@ -46,24 +47,24 @@
       </div>
 
       <div id="cont_center">
-    
-        
+
+
           {if $Error}
           <!-- Error #Begin /-->
           <div id="error_minh">
             <div id="error">
-              <img src="./images/error.jpg" alt=""/><p>{$Error}</p>					
+              <img src="./images/error.jpg" alt=""/><p>{$Error}</p>
             </div>
           </div>
           <!-- Error #End /-->
           {/if}
-          
-          
+
+
 
 
 				<FORM name=currency METHOD=POST>
 
-  {if $Items}						
+  {if $Items}
 							<table>
 								<tr>
 								    <td></td>
@@ -106,14 +107,14 @@
 									  <a href="index.php?section=Currency&delete_id={$item->currency_id}&token={$Token}" class="fl" onclick='if(!confirm("{$Lang->ARE_YOU_SURE_TO_DELETE}")) return false;'><img src="./images/delete.jpg" alt=""/></a>
 									</td>
 								</tr>
-	  {/foreach}				
+	  {/foreach}
 	                        <tr>
 	                          <td colspan=4></td>
 	                          <td colspan=3>
 	                            <input type=hidden name='token' value='{$Token}'>
 	                            <input type="submit" value="Сохранить" class="submit"/>
 	                          </td>
-	                        </tr>			
+	                        </tr>
 							</table>
 
 {else}
@@ -124,7 +125,7 @@
 <div class="new_currency_block">
 <span class="model4">Новая валюта</span>
 <form method=post>
-						
+
 							<table>
 								<tr>
 									<td class="small_text">Название</td>
@@ -154,22 +155,22 @@
 									  <input type="text" class="input5" name=rate_to value='1.00'/>
 									  {$MainCurrency->sign}
 								    </td>
-								    <td class="td_padding"> 	  
+								    <td class="td_padding">
 	                                  <input type="submit" value="Добавить" class="submit11"/>
 	                                  <input type=hidden name='token' value='{$Token}'>
 									  <input type=hidden name='act' value='add'>
 									</td>
 								</tr>
-		
+
 							</table>
 
 </form>
 </div>
- 
+
     </div>
-  </div>	    
+  </div>
 </div>
-<!-- Content #End /--> 
+<!-- Content #End /-->
 
 
 

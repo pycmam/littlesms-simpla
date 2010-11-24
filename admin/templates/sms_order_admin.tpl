@@ -1,0 +1,2 @@
+Заказ на {$order_total|string_format:"%.2f"} {$currency->sign} ({if $order->payment_status == 1}опл.{else}не опл.{/if}, {if $order->delivery_method}{$order->delivery_method}{/if})
+{$order->email}{if $order->phone}, т.{$order->phone}{/if}
