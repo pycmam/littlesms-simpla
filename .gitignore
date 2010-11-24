@@ -1,7 +1,7 @@
 .settings/*
 .buildpath
 .project
-compiled/*
+/compiled/*
 /admin/compiled/*
 /admin/temp/*
 /admin/backups/*
